@@ -31,7 +31,9 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart, notice: 'Line item was successfully created.' }
+        #debugger
+        format.html { redirect_to store_url }
+        format.js #create.js.coffee
         format.json { render action: 'show', status: :created, location: @line_item }
       else
         format.html { render action: 'new' }
